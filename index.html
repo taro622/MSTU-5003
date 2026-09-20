@@ -1,0 +1,1508 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sayso — Find your voice</title>
+<style>
+:root{--ink:#223d34;--muted:#777c70;--paper:#f7f7ef;--line:#dddfd3;--green:#254f40;--lime:#dced98}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif}button{font:inherit;cursor:pointer}button:disabled{opacity:.5;cursor:not-allowed}header{height:92px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 5%}.logo{font-size:32px;letter-spacing:-2px;font-weight:800;display:flex;gap:10px;align-items:center}.logo-mark{background:var(--green);color:var(--lime);border-radius:50%;height:34px;width:34px;display:grid;place-items:center;font-size:23px;letter-spacing:-4px;padding-right:4px}.header-note{font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--muted)}.local{font-size:12px;display:flex;align-items:center;gap:8px}.dot{width:7px;height:7px;border-radius:50%;background:#729048}main{max-width:1400px;margin:auto;padding:50px 5% 24px}.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:2px;font-weight:700}.hero{display:flex;justify-content:space-between;align-items:center;margin-bottom:42px}h1{font-family:Georgia,serif;font-weight:400;font-size:60px;line-height:1.08;letter-spacing:-2.5px;margin:15px 0}h1 em{color:#6a8558}p{line-height:1.6}.intro{color:var(--muted);font-size:14px;margin:16px 0 0}.hero-art{height:160px;width:250px;position:relative;display:flex;justify-content:center;align-items:center}.orb{width:145px;height:145px;border:1px solid #b8c3a9;border-radius:50%;position:absolute}.orb:nth-child(2){transform:translateX(-30px)}.orb:nth-child(3){transform:translateX(30px)}.wave{display:flex;gap:6px;align-items:center;z-index:1}.wave i{width:7px;background:var(--green);border-radius:8px;height:35px}.wave i:nth-child(2n){height:65px}.wave i:nth-child(3n){height:90px}.workspace{display:grid;grid-template-columns:minmax(280px,.85fr) minmax(450px,1.6fr);gap:32px}.step-heading{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:600;margin-bottom:18px}.step{border:1px solid #c8cebc;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-size:10px}.filters{display:flex;gap:6px;margin-bottom:18px;flex-wrap:wrap}.filter{border:1px solid var(--line);border-radius:20px;background:transparent;color:var(--muted);padding:8px 13px;font-size:11px}.filter.active{background:var(--green);border-color:var(--green);color:white}.topics{display:grid;gap:10px}.topic{text-align:left;background:transparent;border:1px solid var(--line);padding:18px;border-radius:9px;display:grid;grid-template-columns:38px 1fr 16px;gap:10px;align-items:center;color:var(--ink);transition:.2s}.topic:hover{background:#eeefe3;transform:translateY(-1px)}.topic.selected{border-color:#6a8057;background:#edf0df;box-shadow:0 0 0 1px #6a8057}.topic-icon{width:34px;height:36px;border-radius:8px;display:grid;place-items:center;background:#e8ebdf;font-size:20px}.topic.selected .topic-icon{background:#dce5be}.topic strong{font-size:13px;display:block;margin-bottom:6px}.topic small{color:var(--muted);font-size:10px}.arrow{font-size:18px;color:#7d8b70}.tip{font-size:11px;line-height:1.7;color:var(--muted);padding:16px 4px}.brief{background:white;border:1px solid var(--line);border-radius:12px;overflow:hidden}.brief-top{padding:27px 30px 22px;background:#f0f2e5;border-bottom:1px solid var(--line)}.brief-meta{display:flex;justify-content:space-between;align-items:center;font-size:10px;color:#6c7b5e;letter-spacing:1.3px;text-transform:uppercase}.pill{border:1px solid #cbd4b9;padding:5px 8px;border-radius:4px;font-size:9px;letter-spacing:.5px}.brief h2{font-family:Georgia,serif;font-size:30px;font-weight:400;letter-spacing:-.7px;margin:19px 0 10px}.brief-top p{font-size:12px;color:#64705e;margin:0;max-width:510px}.brief-body{padding:23px 30px}.section-label{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:16px}.points{display:grid;gap:15px}.point{display:flex;gap:12px;font-size:12px;line-height:1.6;color:#657063}.point b{color:#9ca987;font-size:10px;margin-top:2px;font-weight:400}.point strong{color:var(--ink)}.source-note{font-size:10px;color:var(--muted);line-height:1.7;margin-top:18px;padding-top:15px;border-top:1px solid #eef0e7}.prompt{background:#f8f8f2;border-left:2px solid #9baa70;padding:14px 16px;margin-top:18px;font-family:Georgia,serif;font-size:15px;line-height:1.5}.prompt span{display:block;font:9px Arial,sans-serif;letter-spacing:1.4px;color:var(--muted);margin-bottom:7px}.record-section{margin-top:24px}.record-bar{border:1px solid var(--line);border-radius:10px;padding:20px;display:flex;justify-content:space-between;align-items:center;gap:12px;background:#efefe5}.record-info strong{font-size:13px;font-weight:500}.record-info p{font-size:10px;color:var(--muted);margin:7px 0 0}.primary{border:0;border-radius:6px;background:var(--green);color:white;padding:13px 18px;font-size:12px;display:flex;align-items:center;gap:9px;white-space:nowrap}.primary:hover{background:#39664f}.rec-dot{background:var(--lime);height:8px;width:8px;border-radius:50%}.status{font-size:11px;color:var(--muted);line-height:1.5;margin-top:10px}.recording .rec-dot{background:#ffaba2;animation:pulse 1s infinite}@keyframes pulse{50%{opacity:.3}}.playback{margin-top:15px;padding:16px;border:1px solid var(--line);border-radius:8px}.playback audio{width:100%;height:36px;margin:10px 0}.playback a{font-size:12px;color:var(--green)}.playback strong{font-size:12px}.playback p{font-size:11px;color:var(--muted)}footer{display:flex;justify-content:space-between;border-top:1px solid var(--line);margin-top:36px;padding-top:20px;font-size:10px;color:var(--muted)}button:focus-visible,a:focus-visible{outline:3px solid #a6ba6f;outline-offset:4px}[hidden]{display:none!important}@media(min-width:1450px){main{padding-top:65px}}@media(max-width:780px){header{height:72px}.header-note,.hero-art{display:none}main{padding:30px 5%}h1{font-size:45px}.hero{margin-bottom:30px}.workspace{grid-template-columns:1fr;gap:20px}.topics{grid-template-columns:1fr 1fr}.topic{grid-template-columns:1fr;padding:13px}.topic-icon,.arrow{display:none}.brief-top,.brief-body{padding:22px}.tip{padding-bottom:0}.record-bar{flex-wrap:wrap}footer{gap:20px;line-height:1.6}}
+.topic-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 15px}.topic-count{font-size:11px;color:var(--muted)}.refresh-topics{border:1px solid #b9c5a5;background:#edf0df;color:var(--green);border-radius:6px;padding:9px 12px;font-size:12px}.refresh-topics:hover{background:#dfe7cc}
+
+.study-section{border-top:1px solid var(--line);margin-top:24px;padding-top:20px}.study-section h3{font-size:11px;text-transform:uppercase;letter-spacing:1.5px;margin:0 0 14px}.study-section p,.nuance p{font-size:13px;line-height:1.8;color:#5c685e;margin:0}.study-section dl{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0}.term-card{padding:14px;background:#f3f5eb;border-radius:8px}.term-card dt{font-size:12px;font-weight:700;margin-bottom:7px}.term-card dd{font-size:12px;line-height:1.6;margin:0;color:#657063}.nuance{margin-top:20px;padding:16px;border-left:3px solid #afbd8b;background:#f9faf5}.nuance strong{display:block;font-size:11px;margin-bottom:7px}.source-note summary{cursor:pointer;font-size:12px;font-weight:600;color:var(--green)}.source-note a{display:block;color:var(--green);font-size:12px;margin:8px 0;line-height:1.6}.source-note p{font-size:11px}.points .point{font-size:13px;line-height:1.75}.camera-stage{position:relative;border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-bottom:12px;background:#e9eddf;aspect-ratio:16/9;display:grid;place-items:center}.camera-stage video{width:100%;height:100%;object-fit:contain;background:#172b24;position:absolute;inset:0;transform:scaleX(-1)}#camera-placeholder{text-align:center;padding:20px}#camera-placeholder>span{display:block;font-size:38px;color:#82966d;margin-bottom:12px}#camera-placeholder strong{font-family:Georgia,serif;font-size:22px;font-weight:400}#camera-placeholder p{font-size:11px;color:var(--muted)}.camera-badge{position:absolute;top:12px;left:12px;color:white;background:#213a31dd;border-radius:20px;padding:7px 10px;font-size:10px}.playback video{width:100%;max-height:450px;aspect-ratio:16/9;background:#172b24;border-radius:8px;margin:14px 0}.playback audio{display:none}.record-bar{flex-wrap:wrap}.brief h2{line-height:1.2}@media(max-width:440px){.study-section dl{grid-template-columns:1fr}.primary{width:100%;justify-content:center}}
+.video-actions{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}#delete-video{border:1px solid #d9bfb7;border-radius:6px;padding:9px 14px;background:#fff7f3;color:#8a4636;font-size:12px}#delete-video:hover:not(:disabled){background:#f5e5de}
+</style>
+</head>
+<body>
+<header><div class="logo"><span class="logo-mark">〃</span>sayso<span style="color:#829760">.</span></div><div class="header-note">A little practice. A clearer voice.</div><div class="local"><span class="dot"></span> Your space to practice</div></header>
+<main><section class="hero"><div><div class="eyebrow">Think it through. Talk it out.</div><h1>Big ideas.<br><em>In your own words.</em></h1><p class="intro">Explore a topic, gather your thoughts, and press record.<br>No audience. No pressure. Just you, getting better.</p></div><div class="hero-art" aria-hidden="true"><div class="orb"></div><div class="orb"></div><div class="orb"></div><div class="wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div></section>
+<div class="workspace"><section><div class="step-heading"><span class="step">1</span> Find something to talk about</div><div class="filters" aria-label="Topic categories"></div><div class="topic-toolbar"><span class="topic-count" id="topic-count" role="status"></span><button class="refresh-topics" id="refresh-topics" aria-label="Refresh topics">↻ Refresh</button></div><div class="topics"></div><p class="tip">↗ &nbsp; A small challenge: try a topic outside your comfort zone.</p></section><div><section class="brief" aria-labelledby="topic-title"><div class="brief-top"><div class="brief-meta"><span id="category"></span><span class="pill">2–3 MIN PRACTICE</span></div><h2 id="topic-title"></h2><p id="description"></p></div><div class="brief-body"><div class="section-label">Understand the concept</div><div class="points"></div><div class="study-section"><h3>Key terms</h3><dl id="terms"></dl></div><div class="study-section"><h3>A closer look</h3><p id="example"></p></div><div class="nuance"><strong>Think critically</strong><p id="nuance"></p></div><details class="source-note" open><summary>Resources &amp; further reading</summary><p id="sources"></p><div id="resource-links"></div></details><div class="prompt"><span>MAKE IT YOUR OWN</span><div id="prompt"></div></div></div></section><section class="record-section"><div class="step-heading"><span class="step">2</span> Take a breath. Find your words.</div><div class="camera-stage"><video id="live-preview" autoplay muted playsinline aria-label="Live camera preview" hidden></video><div id="camera-placeholder"><span aria-hidden="true">▣</span><strong>Your presentation studio</strong><p>Camera + microphone · Preview appears when recording starts</p></div><span class="camera-badge" id="camera-badge" hidden>● LIVE · Preview is muted</span></div><div class="record-bar"><div class="record-info"><strong id="record-title">Ready when you are</strong><p id="record-help">Aim for 2–3 minutes. Clarity comes with practice.</p></div><button class="primary" id="record"><span class="rec-dot"></span><span id="record-label">Start video recording</span></button></div><div class="status" id="status" role="status">Video + audio · Nothing is uploaded · Download your video to keep it</div><div class="playback" hidden><strong id="take-title"></strong><video id="recorded-video" controls playsinline preload="metadata" aria-label="Recorded presentation playback"></video><div class="video-actions"><a id="download">↓ Download video</a><button id="delete-video" type="button">Delete video</button></div><p>Watch your take: is your main idea clear? Notice your pacing, eye contact, and examples.</p></div></section></div></div>
+<footer><span>Progress starts with saying something.</span><span>Made for practice, not perfection. &nbsp; ✳</span></footer></main>
+<script>
+const topics = [
+  {
+    "id": "attention",
+    "category": "Everyday life",
+    "icon": "◉",
+    "title": "The art of paying attention",
+    "description": "In a world that keeps asking for your attention, what does it mean to choose where it goes?",
+    "points": [
+      [
+        "Attention is selective.",
+        "We focus on a small part of the information around us. What we notice shapes what we remember."
+      ],
+      [
+        "Switching has a cost.",
+        "Moving between demanding tasks requires reorienting yourself, which can slow you down."
+      ],
+      [
+        "Your environment matters.",
+        "A quiet space, fewer notifications, and one clear task can make deliberate focus easier."
+      ]
+    ],
+    "source": "Background reading: William James, The Principles of Psychology (1890); Rubinstein, Meyer & Evans, Executive Control of Cognitive Processes in Task Switching (2001).",
+    "prompt": "Explain why attention matters using a moment from your own life. What is one habit you would change?",
+    "terms": [
+      [
+        "Selective attention",
+        "Prioritizing some information while other information receives less processing."
+      ],
+      [
+        "Task switching",
+        "Shifting between goals, rules, or activities."
+      ]
+    ],
+    "example": "Imagine preparing a three-minute talk while messages appear on your phone. Each reply requires you to leave your outline, interpret the message, and then recover your place. Compare that with drafting one section before checking messages. Describe the steps in both situations rather than assuming that every interruption has the same cost. A useful comparison would track completion time, errors, and how much of your argument you can explain afterward.",
+    "nuance": "Use this illustrative scenario to explain your reasoning. Distinguish your own interpretation from the background information, and acknowledge a reasonable alternative.",
+    "resources": []
+  },
+  {
+    "id": "ai",
+    "category": "Technology",
+    "icon": "✳",
+    "title": "Creativity in the age of AI",
+    "description": "When a machine can generate an idea, where does human creativity begin?",
+    "points": [
+      [
+        "Generation is only one step.",
+        "Creative work also involves choosing a problem, judging ideas, and refining the result."
+      ],
+      [
+        "Tools shape possibilities.",
+        "Like cameras and synthesizers, new tools can change how people make and experience creative work."
+      ],
+      [
+        "Authorship raises questions.",
+        "Consider how intention, effort, and responsibility influence who gets credit."
+      ]
+    ],
+    "source": "Discussion brief: these are framing ideas, not claims that AI has human understanding. Historical context: photography and electronic music as creative tools.",
+    "prompt": "Can something made with AI be creative? State your view, give an example, and consider an opposing view.",
+    "terms": [
+      [
+        "Generative AI",
+        "A system that produces new outputs from patterns learned during training."
+      ],
+      [
+        "Curation",
+        "Selecting, evaluating, and arranging material for a purpose."
+      ]
+    ],
+    "example": "Imagine two designers using the same image generator for a museum poster. One accepts the first output; the other sets a visual direction, compares alternatives, edits the composition, and checks whether the message fits the audience. The example separates generating material from making creative decisions. Explain which choices you would credit to the designer, and identify what information about the process should be disclosed to a viewer.",
+    "nuance": "Use this illustrative scenario to explain your reasoning. Distinguish your own interpretation from the background information, and acknowledge a reasonable alternative.",
+    "resources": []
+  },
+  {
+    "id": "cities",
+    "category": "Society",
+    "icon": "⌂",
+    "title": "What makes a city livable?",
+    "description": "Look beyond the skyline. Think about the everyday places that help people feel at home.",
+    "points": [
+      [
+        "Distance affects daily life.",
+        "Nearby shops, parks, and services can make daily routines easier without a car."
+      ],
+      [
+        "Public space brings people together.",
+        "Comfortable sidewalks and gathering places create opportunities for everyday encounters."
+      ],
+      [
+        "Livability is not one-size-fits-all.",
+        "Affordability, accessibility, and safety can mean different things to different residents."
+      ]
+    ],
+    "source": "Background reading: Jane Jacobs, The Death and Life of Great American Cities (1961); UN Sustainable Development Goal 11: sustainable cities and communities.",
+    "prompt": "Describe one change that would improve your neighborhood. Who would benefit, and what tradeoff would it involve?",
+    "terms": [
+      [
+        "Walkability",
+        "How well a place supports useful, comfortable trips on foot."
+      ],
+      [
+        "Accessibility",
+        "Whether people with different needs can reach and use a place."
+      ]
+    ],
+    "example": "Consider a neighborhood with a nearby grocery store but a wide road between the store and its homes. Distance alone does not tell you whether residents can reach it comfortably. Compare a shorter route without crossings with a slightly longer route that has curb ramps, shade, and safe crossings. Explain how a parent with a stroller and a resident using a wheelchair might evaluate the same proposal differently.",
+    "nuance": "Use this illustrative scenario to explain your reasoning. Distinguish your own interpretation from the background information, and acknowledge a reasonable alternative.",
+    "resources": []
+  },
+  {
+    "id": "habits",
+    "category": "Everyday life",
+    "icon": "↻",
+    "title": "Small habits, lasting change",
+    "description": "Why are some routines effortless, while others never seem to stick?",
+    "points": [
+      [
+        "Context can become a cue.",
+        "Repeating a behavior in a stable setting can help it become more automatic."
+      ],
+      [
+        "Make the first step manageable.",
+        "A simple action can be easier to repeat than an ambitious plan with many steps."
+      ],
+      [
+        "There is no universal timeline.",
+        "Habit formation varies by person and behavior; missing once does not erase your effort."
+      ]
+    ],
+    "source": "Background reading: Lally et al., How Are Habits Formed: Modelling Habit Formation in the Real World (2010).",
+    "prompt": "Teach someone how to build one useful habit. Explain the cue, the action, and how to handle a difficult day.",
+    "terms": [
+      [
+        "Context cue",
+        "A feature of a situation that can prompt a familiar behavior."
+      ],
+      [
+        "Automaticity",
+        "Performing an action with relatively little conscious deliberation."
+      ]
+    ],
+    "example": "Suppose you want to practice speaking every day. Instead of promising a long presentation, attach a one-minute explanation to an existing routine: after putting away breakfast dishes, choose one topic and record. Keep the equipment ready so setup is simple. If your schedule changes, choose a replacement cue. Explain how you would judge the routine after two weeks without treating a missed day as proof that it has failed.",
+    "nuance": "Use this illustrative scenario to explain your reasoning. Distinguish your own interpretation from the background information, and acknowledge a reasonable alternative.",
+    "resources": []
+  },
+  {
+    "id": "nature",
+    "category": "Society",
+    "icon": "❋",
+    "title": "Making room for nature",
+    "description": "What role should green spaces play in the places where we live and work?",
+    "points": [
+      [
+        "Green space serves many purposes.",
+        "Trees offer shade, gardens provide habitat, and parks create room for recreation."
+      ],
+      [
+        "Access matters.",
+        "A green space is more useful when people can reach it and feel welcome there."
+      ],
+      [
+        "Design involves choices.",
+        "Maintenance, water use, accessibility, and competing uses of land all deserve consideration."
+      ]
+    ],
+    "source": "Background context: UN Sustainable Development Goal 11 includes access to safe, inclusive, accessible green and public spaces.",
+    "prompt": "Make the case for a new green space in your community. Address one reasonable objection.",
+    "terms": [
+      [
+        "Green infrastructure",
+        "Vegetation and natural features used as part of a planned environment."
+      ],
+      [
+        "Habitat",
+        "The place and conditions in which an organism lives."
+      ]
+    ],
+    "example": "Imagine converting a paved courtyard into a shaded garden. Residents want benches, children want room to play, and maintenance staff need a manageable watering plan. Compare a decorative lawn with mixed planting and a permeable path. Your proposal should explain who uses the space, which functions it serves, and how it will be maintained. More greenery is a starting goal, but the design still needs concrete choices.",
+    "nuance": "Use this illustrative scenario to explain your reasoning. Distinguish your own interpretation from the background information, and acknowledge a reasonable alternative.",
+    "resources": []
+  },
+  {
+    "id": "listening",
+    "category": "Everyday life",
+    "icon": "◉",
+    "title": "The power of listening",
+    "description": "What makes someone feel truly heard?",
+    "points": [
+      [
+        "Leave room for an answer.",
+        "A pause gives the other person space to finish their thought."
+      ],
+      [
+        "Check your interpretation.",
+        "Summarizing what you heard lets the speaker correct misunderstandings."
+      ],
+      [
+        "Ask with curiosity.",
+        "Open questions invite more than a yes or no."
+      ]
+    ],
+    "source": "Practice brief: original discussion notes and illustrative considerations, not a summary of a specific research source.",
+    "prompt": "Describe a disagreement where better listening could have changed the conversation.",
+    "terms": [
+      [
+        "Paraphrasing",
+        "Restating someone’s message in your own words to check understanding."
+      ],
+      [
+        "Open question",
+        "A question that invites explanation instead of a fixed short answer."
+      ]
+    ],
+    "example": "A teammate says, “Our meetings are a waste of time.” Instead of immediately defending the schedule, ask which part feels unhelpful. They may describe unclear decisions rather than meeting length. Paraphrase that concern and check whether you understood it. Then suggest an agenda ending with named decisions and owners. Explain how listening changes the problem you are solving, and why paraphrasing should leave room for correction.",
+    "nuance": "Use this illustrative scenario to explain your reasoning. Distinguish your own interpretation from the background information, and acknowledge a reasonable alternative.",
+    "resources": []
+  },
+  {
+    "id": "time",
+    "category": "Everyday life",
+    "icon": "◉",
+    "title": "What is time well spent?",
+    "description": "Busy days and meaningful days are not always the same.",
+    "points": [
+      [
+        "Name your priorities.",
+        "Consider which activities matter to you and why."
+      ],
+      [
+        "Recognize tradeoffs.",
+        "Time spent on one commitment is time unavailable for another."
+      ],
+      [
+        "Leave some space.",
+        "Think about the role of rest and unplanned moments."
+      ]
+    ],
+    "source": "Practice brief: original discussion notes and illustrative considerations, not a summary of a specific research source.",
+    "prompt": "Explain your ideal ordinary day and defend your two most important choices.",
+    "terms": [
+      [
+        "Opportunity cost",
+        "The value of the next-best option you give up when choosing."
+      ],
+      [
+        "Prioritization",
+        "Ordering tasks or commitments by what matters for a goal."
+      ]
+    ],
+    "example": "You have a free afternoon and three options: finish an assignment, visit a friend, or rest after a demanding week. There is no universal ranking. Compare deadlines, the effort each activity requires, and whether another opportunity will exist soon. Then choose deliberately. Explain the tradeoff without reducing every activity to productivity, and describe what new information would make you change your plan.",
+    "nuance": "Use this illustrative scenario to explain your reasoning. Distinguish your own interpretation from the background information, and acknowledge a reasonable alternative.",
+    "resources": []
+  },
+  {
+    "id": "cooking",
+    "category": "Everyday life",
+    "icon": "◉",
+    "title": "A meal worth sharing",
+    "description": "Food can tell a story about people, places, and traditions.",
+    "points": [
+      [
+        "Start with the details.",
+        "Describe the ingredients, smells, and setting of a memorable meal."
+      ],
+      [
+        "Connect food to people.",
+        "Who prepares or shares the meal can be part of its meaning."
+      ],
+      [
+        "Consider change.",
+        "Recipes can evolve when people move or ingredients change."
+      ]
+    ],
+    "source": "Practice brief: original discussion notes and illustrative considerations, not a summary of a specific research source.",
+    "prompt": "Introduce a meaningful dish to someone who has never tried it.",
+    "terms": [
+      [
+        "Foodways",
+        "The practices and meanings surrounding how people obtain, prepare, and share food."
+      ],
+      [
+        "Sensory detail",
+        "A description grounded in sight, sound, smell, taste, or touch."
+      ]
+    ],
+    "example": "Describe making a family dish in a new city where one ingredient is unavailable. You substitute something local, adjust the cooking method, and serve it to friends unfamiliar with the original. Explain the sequence of preparation, the ingredient’s role, and which part of the meal still connects you to home. This makes a cultural story concrete without claiming that one family’s recipe represents an entire community.",
+    "nuance": "Use this illustrative scenario to explain your reasoning. Distinguish your own interpretation from the background information, and acknowledge a reasonable alternative.",
+    "resources": []
+  },
+  {
+    "id": "failure",
+    "category": "Everyday life",
+    "icon": "◉",
+    "title": "Learning from a wrong turn",
+    "description": "How can you explain a setback without letting it define the whole story?",
+    "points": [
+      [
+        "Separate events from labels.",
+        "Describe what happened rather than calling yourself a failure."
+      ],
+      [
+        "Examine the decisions.",
+        "Consider what you knew then and what you learned afterward."
+      ],
+      [
+        "Choose a next step.",
+        "Turn the lesson into one action you can actually try."
+      ]
+    ],
+    "source": "Practice brief: original discussion notes and illustrative considerations, not a summary of a specific research source.",
+    "prompt": "Tell a story about a mistake, what it taught you, and what you would do differently.",
+    "terms": [
+      [
+        "Reflection",
+        "Examining an experience to understand choices, outcomes, and possible changes."
+      ],
+      [
+        "Hindsight bias",
+        "Seeing a past outcome as more predictable after learning what happened."
+      ]
+    ],
+    "example": "Imagine missing a project deadline because you planned only for writing and forgot research and revision. Reconstruct what you knew when making the schedule. Distinguish an unrealistic estimate from an unexpected event. Next time, divide the project into stages and check progress earlier. In your explanation, show the link between the specific problem and the proposed change rather than ending with a vague promise to work harder.",
+    "nuance": "Use this illustrative scenario to explain your reasoning. Distinguish your own interpretation from the background information, and acknowledge a reasonable alternative.",
+    "resources": []
+  },
+  {
+    "id": "privacy",
+    "category": "Technology",
+    "icon": "✳",
+    "title": "Convenience or privacy?",
+    "description": "How much information would you exchange for a more convenient tool?",
+    "points": [
+      [
+        "Identify the exchange.",
+        "A service may ask for information to personalize an experience."
+      ],
+      [
+        "Consider necessity.",
+        "Distinguish information needed for a feature from optional collection."
+      ],
+      [
+        "Think about control.",
+        "Clear choices about retention and deletion can matter to users."
+      ]
+    ],
+    "source": "Practice brief: original discussion notes and illustrative considerations, not a summary of a specific research source.",
+    "prompt": "Design a useful app feature and explain what information it should ask for.",
+    "terms": [
+      [
+        "Data minimization",
+        "Collecting only the information needed for a stated purpose."
+      ],
+      [
+        "Retention",
+        "How long information is kept before removal."
+      ]
+    ],
+    "example": "Design a weather app that can use either a typed city or precise location. Explain why a forecast may not require a continuous location history. Compare asking for location every time with letting the user save a city. Discuss how the interface would explain each choice and when data would be deleted. This is a design exercise; an easy consent button alone does not explain what happens to information.",
+    "nuance": "Use this illustrative scenario to explain your reasoning. Distinguish your own interpretation from the background information, and acknowledge a reasonable alternative.",
+    "resources": []
+  },
+  {
+    "id": "algorithms",
+    "category": "Technology",
+    "icon": "✳",
+    "title": "Who chooses what you see?",
+    "description": "Consider the role of recommendation systems in everyday discovery.",
+    "points": [
+      [
+        "Recommendations rank options.",
+        "A feed presents some items before others according to a system of rules or predictions."
+      ],
+      [
+        "Objectives matter.",
+        "Ranking for clicks may create a different experience from ranking for variety."
+      ],
+      [
+        "Users have preferences.",
+        "Consider whether people should be able to change how their feed is organized."
+      ]
+    ],
+    "source": "Practice brief: original discussion notes and illustrative considerations, not a summary of a specific research source.",
+    "prompt": "Explain how you would design a recommendation feed that helps people discover new perspectives.",
+    "terms": [
+      [
+        "Ranking objective",
+        "The outcome a system tries to optimize when ordering items."
+      ],
+      [
+        "Feedback loop",
+        "A process in which an output influences later inputs."
+      ]
+    ],
+    "example": "Imagine a music feed that ranks songs by the probability you will play them. Familiar artists may repeatedly rise to the top, and your clicks then reinforce those recommendations. Compare that with a feed that reserves one slot for discovery. Explain how you would measure success: total plays, satisfaction, variety, or something else. Different measures can favor different designs even when the underlying song catalog is identical.",
+    "nuance": "Use this illustrative scenario to explain your reasoning. Distinguish your own interpretation from the background information, and acknowledge a reasonable alternative.",
+    "resources": []
+  },
+  {
+    "id": "phones",
+    "category": "Technology",
+    "icon": "✳",
+    "title": "A day without your phone",
+    "description": "Imagine replacing the small digital habits built into your day.",
+    "points": [
+      [
+        "List the functions.",
+        "A phone can serve as a map, camera, calendar, and communication tool."
+      ],
+      [
+        "Find substitutes.",
+        "Some functions have simple alternatives; others require planning."
+      ],
+      [
+        "Notice the tradeoff.",
+        "Consider what would become easier and what would become harder."
+      ]
+    ],
+    "source": "Practice brief: original discussion notes and illustrative considerations, not a summary of a specific research source.",
+    "prompt": "Walk us through a phone-free day and explain which habit you would keep afterward.",
+    "terms": [
+      [
+        "Cognitive offloading",
+        "Using an external aid to reduce what you must remember or process mentally."
+      ],
+      [
+        "Affordance",
+        "An action that an object or interface makes possible for a user."
+      ]
+    ],
+    "example": "Plan a trip without a phone: write the address, study the route, agree on a meeting point, and carry a payment option. Now compare the mental work with using a navigation app. The phone may reduce some demands while creating dependence on battery and connectivity. Explain which functions you would keep and which habits you would change, using a particular day rather than a claim that technology is always helpful or harmful.",
+    "nuance": "Use this illustrative scenario to explain your reasoning. Distinguish your own interpretation from the background information, and acknowledge a reasonable alternative.",
+    "resources": []
+  },
+  {
+    "id": "robots",
+    "category": "Technology",
+    "icon": "✳",
+    "title": "Robots as everyday helpers",
+    "description": "Which tasks would you want to delegate to a machine?",
+    "points": [
+      [
+        "Define a specific task.",
+        "Delivering an object is a clearer goal than being a helpful robot."
+      ],
+      [
+        "Consider the setting.",
+        "A predictable room and a crowded street pose different challenges."
+      ],
+      [
+        "Keep responsibility visible.",
+        "Decide who should step in when the machine cannot handle a situation."
+      ]
+    ],
+    "source": "Practice brief: original discussion notes and illustrative considerations, not a summary of a specific research source.",
+    "prompt": "Pitch a household robot, including one thing it should never decide on its own.",
+    "terms": [
+      [
+        "Autonomy",
+        "A system’s capacity to act without step-by-step human direction."
+      ],
+      [
+        "Operational boundary",
+        "The conditions and tasks within which a system is intended to work."
+      ]
+    ],
+    "example": "Imagine a robot carrying laundry between rooms. A clear hallway is different from a staircase with toys on the steps. Define what it can detect, when it should stop, and how a person can recover the task. Compare carrying a closed basket with sorting delicate clothing. Your pitch becomes more convincing when you explain the boundary of the system rather than promising a robot that can do everything.",
+    "nuance": "Use this illustrative scenario to explain your reasoning. Distinguish your own interpretation from the background information, and acknowledge a reasonable alternative.",
+    "resources": []
+  },
+  {
+    "id": "digital-books",
+    "category": "Technology",
+    "icon": "✳",
+    "title": "Paper books or digital pages?",
+    "description": "The same words can feel different in different formats.",
+    "points": [
+      [
+        "Compare practical features.",
+        "Portability, adjustable text, and writing in margins may matter differently to readers."
+      ],
+      [
+        "Match format to purpose.",
+        "Studying, traveling, and reading for pleasure can call for different choices."
+      ],
+      [
+        "Consider access.",
+        "Devices, connectivity, and available editions shape the options."
+      ]
+    ],
+    "source": "Practice brief: original discussion notes and illustrative considerations, not a summary of a specific research source.",
+    "prompt": "Recommend a reading format for a particular person and explain your reasoning.",
+    "terms": [
+      [
+        "Annotation",
+        "Adding notes or marks that interpret or organize material."
+      ],
+      [
+        "Navigation",
+        "Moving through information to locate a desired section."
+      ]
+    ],
+    "example": "Compare reading a novel on a train with studying a diagram-heavy textbook at a desk. A lightweight device and adjustable type may help in the first setting; comparing several pages or making spatial notes may matter in the second. Describe the reader, the setting, and the task before choosing a format. Avoid assuming that everyone reads or learns in the same way just because one format suits you.",
+    "nuance": "Use this illustrative scenario to explain your reasoning. Distinguish your own interpretation from the background information, and acknowledge a reasonable alternative.",
+    "resources": []
+  },
+  {
+    "id": "volunteering",
+    "category": "Society",
+    "icon": "⌂",
+    "title": "What makes help helpful?",
+    "description": "Good intentions are a starting point for community work.",
+    "points": [
+      [
+        "Ask about the need.",
+        "People receiving help should have a say in what is useful."
+      ],
+      [
+        "Match the commitment.",
+        "A reliable small contribution can be easier to plan around than an uncertain promise."
+      ],
+      [
+        "Look for feedback.",
+        "Ask how to tell whether an activity is meeting its purpose."
+      ]
+    ],
+    "source": "Practice brief: original discussion notes and illustrative considerations, not a summary of a specific research source.",
+    "prompt": "Propose a small volunteer project and explain how you would learn what the community needs.",
+    "terms": [
+      [
+        "Stakeholder",
+        "A person or group affected by a decision or activity."
+      ],
+      [
+        "Needs assessment",
+        "A process for finding out what support is useful in a particular setting."
+      ]
+    ],
+    "example": "A group wants to donate books to a community center. Before collecting them, ask about readers’ ages, languages, interests, available storage, and staff time. An impressive number of boxes is not necessarily a useful outcome. Explain how the group would agree on a manageable request, deliver it reliably, and invite feedback. Distinguish counting donated items from finding out whether people actually use them.",
+    "nuance": "Use this illustrative scenario to explain your reasoning. Distinguish your own interpretation from the background information, and acknowledge a reasonable alternative.",
+    "resources": []
+  },
+  {
+    "id": "transport",
+    "category": "Society",
+    "icon": "⌂",
+    "title": "Rethinking the daily commute",
+    "description": "A journey to work or school connects personal routines with public choices.",
+    "points": [
+      [
+        "Compare options.",
+        "Walking, cycling, transit, and driving each involve different constraints."
+      ],
+      [
+        "Look beyond speed.",
+        "Cost, reliability, accessibility, and comfort also matter."
+      ],
+      [
+        "Consider different travelers.",
+        "The same route may work differently for a caregiver, student, or wheelchair user."
+      ]
+    ],
+    "source": "Practice brief: original discussion notes and illustrative considerations, not a summary of a specific research source.",
+    "prompt": "Recommend one improvement to a familiar commute and acknowledge a limitation.",
+    "terms": [
+      [
+        "Reliability",
+        "How consistently a service delivers its expected performance."
+      ],
+      [
+        "Last-mile connection",
+        "The link between a main transport service and a traveler’s destination."
+      ]
+    ],
+    "example": "A bus takes twenty minutes once it arrives, but its arrival time is unpredictable. Another route takes thirty minutes and arrives on a dependable schedule. Compare the routes for someone who must reach work at a fixed time. Include the walk to the stop and any transfer. Explain why a proposal to reduce average journey time might still leave an important part of the commuting problem unresolved.",
+    "nuance": "Use this illustrative scenario to explain your reasoning. Distinguish your own interpretation from the background information, and acknowledge a reasonable alternative.",
+    "resources": []
+  },
+  {
+    "id": "libraries",
+    "category": "Society",
+    "icon": "⌂",
+    "title": "A library for the future",
+    "description": "What should a shared space for knowledge offer?",
+    "points": [
+      [
+        "Think beyond borrowing.",
+        "Imagine space for reading, workshops, quiet work, and meeting others."
+      ],
+      [
+        "Balance competing needs.",
+        "Silent study and lively group activities may need different areas."
+      ],
+      [
+        "Design for access.",
+        "Hours, location, language, and accessibility affect who can participate."
+      ]
+    ],
+    "source": "Practice brief: original discussion notes and illustrative considerations, not a summary of a specific research source.",
+    "prompt": "Pitch three features for a neighborhood library with a limited budget.",
+    "terms": [
+      [
+        "Public good",
+        "In economics, a good that is non-rival and non-excludable; public services do not always meet both conditions."
+      ],
+      [
+        "Universal design",
+        "Designing for broad usability across different abilities and circumstances."
+      ]
+    ],
+    "example": "Plan a library floor with quiet study, group work, children’s reading, and accessible computers. Noise, staff availability, opening hours, and limited space create tradeoffs. Describe how you would gather feedback from people who do not currently visit. Be precise: a library is a public service, but a particular seat or borrowed copy cannot always be used by everyone at once. Explain which resources need scheduling.",
+    "nuance": "Use this illustrative scenario to explain your reasoning. Distinguish your own interpretation from the background information, and acknowledge a reasonable alternative.",
+    "resources": []
+  },
+  {
+    "id": "traditions",
+    "category": "Society",
+    "icon": "⌂",
+    "title": "Traditions worth keeping",
+    "description": "How do communities decide what to preserve and what to change?",
+    "points": [
+      [
+        "Explain the meaning.",
+        "A tradition can connect a practice with a shared story."
+      ],
+      [
+        "Recognize different experiences.",
+        "Members of the same community may relate to a tradition differently."
+      ],
+      [
+        "Make room for adaptation.",
+        "Discuss whether a practice can change while keeping its purpose."
+      ]
+    ],
+    "source": "Practice brief: original discussion notes and illustrative considerations, not a summary of a specific research source.",
+    "prompt": "Describe a tradition you value and one way you would adapt it for a new generation.",
+    "terms": [
+      [
+        "Cultural transmission",
+        "Passing practices, meanings, or knowledge between people and generations."
+      ],
+      [
+        "Adaptation",
+        "Changing a practice to fit new conditions."
+      ]
+    ],
+    "example": "A community celebration traditionally takes place on a weekday, making attendance difficult for some families. Moving it to a weekend could improve access but change its connection to a historical date. Present the reasons on both sides and propose a compromise, such as a small observance followed by a larger gathering. Explain whose perspectives you would seek before claiming that the revised event represents the community.",
+    "nuance": "Use this illustrative scenario to explain your reasoning. Distinguish your own interpretation from the background information, and acknowledge a reasonable alternative.",
+    "resources": []
+  },
+  {
+    "id": "questions",
+    "category": "Learning",
+    "icon": "◇",
+    "title": "The art of asking questions",
+    "description": "A useful question can open a conversation or reshape a problem.",
+    "points": [
+      [
+        "Clarify the goal.",
+        "Decide whether you need a fact, an explanation, or a new perspective."
+      ],
+      [
+        "Avoid loading the answer.",
+        "The wording of a question can make one answer seem expected."
+      ],
+      [
+        "Follow the response.",
+        "A thoughtful follow-up builds on what someone actually said."
+      ]
+    ],
+    "source": "Practice brief: original discussion notes and illustrative considerations, not a summary of a specific research source.",
+    "prompt": "Explain a topic by asking three questions and showing why each one matters.",
+    "terms": [
+      [
+        "Probing question",
+        "A follow-up that asks for more detail, explanation, or evidence."
+      ],
+      [
+        "Leading question",
+        "A question worded to suggest a preferred answer."
+      ]
+    ],
+    "example": "Compare “Don’t you think this lesson was confusing?” with “Which part of the lesson was hardest to follow?” The first suggests a judgment; the second invites a specific experience, though it still assumes some difficulty. A more open start is “How was the lesson for you?” Explain how you would move from an open invitation to a focused follow-up without putting your own answer into the speaker’s mouth.",
+    "nuance": "Use this illustrative scenario to explain your reasoning. Distinguish your own interpretation from the background information, and acknowledge a reasonable alternative.",
+    "resources": []
+  },
+  {
+    "id": "teach",
+    "category": "Learning",
+    "icon": "◇",
+    "title": "Teach something simply",
+    "description": "How would you explain a familiar idea to a complete beginner?",
+    "points": [
+      [
+        "Start with what they know.",
+        "Use a familiar example as an entry point."
+      ],
+      [
+        "Choose the essentials.",
+        "Decide which details are necessary for a first understanding."
+      ],
+      [
+        "Check understanding.",
+        "Invite the learner to explain the idea back in their own words."
+      ]
+    ],
+    "source": "Practice brief: original discussion notes and illustrative considerations, not a summary of a specific research source.",
+    "prompt": "Teach a simple skill in three steps and anticipate one common misunderstanding.",
+    "terms": [
+      [
+        "Scaffolding",
+        "Temporary support that helps a learner attempt a task."
+      ],
+      [
+        "Prior knowledge",
+        "What a learner already understands about a subject."
+      ]
+    ],
+    "example": "Teach someone to make a simple spreadsheet budget. First identify income and expense categories, then show one subtraction formula, and finally let the learner enter their own example. Ask them to explain why the result changes when a cost rises. Remove help as they become more comfortable. Describe which details you would postpone so that an introductory explanation remains accurate without becoming a complete software manual.",
+    "nuance": "Use this illustrative scenario to explain your reasoning. Distinguish your own interpretation from the background information, and acknowledge a reasonable alternative.",
+    "resources": []
+  },
+  {
+    "id": "feedback",
+    "category": "Learning",
+    "icon": "◇",
+    "title": "Feedback that helps",
+    "description": "What turns a comment into something a person can use?",
+    "points": [
+      [
+        "Be specific.",
+        "Point to an observable part of the work rather than a broad label."
+      ],
+      [
+        "Explain the effect.",
+        "Describe why that detail helps or gets in the way."
+      ],
+      [
+        "Offer a possible next step.",
+        "Make room for the recipient to decide what to try."
+      ]
+    ],
+    "source": "Practice brief: original discussion notes and illustrative considerations, not a summary of a specific research source.",
+    "prompt": "Give constructive feedback on an imaginary presentation, with one strength and one improvement.",
+    "terms": [
+      [
+        "Formative feedback",
+        "Information intended to guide improvement while work is developing."
+      ],
+      [
+        "Actionability",
+        "How clearly feedback points to something a person can do."
+      ]
+    ],
+    "example": "Instead of saying “Your presentation needs work,” identify a moment: the main claim appears after two minutes of background. Explain that you struggled to understand what the examples were meant to support. Suggest stating the claim near the beginning and then testing the new order with a listener. Preserve what already works, such as a clear illustration, so the speaker knows what to retain as well as what to revise.",
+    "nuance": "Use this illustrative scenario to explain your reasoning. Distinguish your own interpretation from the background information, and acknowledge a reasonable alternative.",
+    "resources": []
+  },
+  {
+    "id": "curiosity",
+    "category": "Learning",
+    "icon": "◇",
+    "title": "Following your curiosity",
+    "description": "What makes an ordinary subject suddenly interesting?",
+    "points": [
+      [
+        "Notice a puzzle.",
+        "Start with something you do not understand or did not expect."
+      ],
+      [
+        "Find a small experiment.",
+        "Choose a question you can explore through observation or practice."
+      ],
+      [
+        "Share the discovery.",
+        "Explain what changed in your understanding and what remains uncertain."
+      ]
+    ],
+    "source": "Practice brief: original discussion notes and illustrative considerations, not a summary of a specific research source.",
+    "prompt": "Introduce something you became curious about and explain how you would investigate it.",
+    "terms": [
+      [
+        "Hypothesis",
+        "A proposed explanation that can be examined against evidence."
+      ],
+      [
+        "Observation",
+        "A recorded description of what is noticed or measured."
+      ]
+    ],
+    "example": "You notice that one classroom plant grows toward the window. Propose light direction as one possible explanation, then ask what else differs, such as watering or the plant’s position. Sketch a comparison that changes one condition while tracking the others. Separate the observation from your explanation and describe what finding would challenge your idea. Curiosity becomes a useful presentation when the audience can follow that reasoning.",
+    "nuance": "Use this illustrative scenario to explain your reasoning. Distinguish your own interpretation from the background information, and acknowledge a reasonable alternative.",
+    "resources": []
+  },
+  {
+    "id": "group-work",
+    "category": "Learning",
+    "icon": "◇",
+    "title": "Making teamwork work",
+    "description": "How can a group turn different ideas into a shared result?",
+    "points": [
+      [
+        "Define the outcome.",
+        "Agree on what you are trying to produce before dividing the tasks."
+      ],
+      [
+        "Make responsibilities clear.",
+        "Name who owns each task and when the group will reconnect."
+      ],
+      [
+        "Handle disagreement openly.",
+        "Compare proposals against the shared goal rather than personal preferences alone."
+      ]
+    ],
+    "source": "Practice brief: original discussion notes and illustrative considerations, not a summary of a specific research source.",
+    "prompt": "Explain how you would organize a team project when members disagree about the approach.",
+    "terms": [
+      [
+        "Coordination",
+        "Aligning separate activities so they contribute to a shared outcome."
+      ],
+      [
+        "Dependency",
+        "A relationship in which one task needs an output from another."
+      ]
+    ],
+    "example": "Four people are preparing a presentation. If the slide designer starts before the group agrees on the argument, the work may need substantial revision. Map the dependencies: research supports the outline, the outline guides the slides, and rehearsal checks the timing. Assign owners and an early review point. Explain how you would handle a missed handoff without assuming that assigning tasks once is enough to keep a project coordinated.",
+    "nuance": "Use this illustrative scenario to explain your reasoning. Distinguish your own interpretation from the background information, and acknowledge a reasonable alternative.",
+    "resources": []
+  },
+  {
+    "id": "evidence",
+    "category": "Learning",
+    "icon": "◇",
+    "title": "What makes an argument convincing?",
+    "description": "A strong opinion needs a clear connection between a claim and its support.",
+    "points": [
+      [
+        "State the claim.",
+        "Make it clear what you want the listener to accept."
+      ],
+      [
+        "Examine the support.",
+        "An example illustrates a point but may not show how common it is."
+      ],
+      [
+        "Address alternatives.",
+        "Consider another explanation and what evidence could distinguish it."
+      ]
+    ],
+    "source": "Practice brief: original discussion notes and illustrative considerations, not a summary of a specific research source.",
+    "prompt": "Argue for a small change at school or work, explaining your evidence and its limits.",
+    "terms": [
+      [
+        "Claim",
+        "A statement offered for an audience to accept."
+      ],
+      [
+        "Counterargument",
+        "A reason that challenges a claim or supports another conclusion."
+      ]
+    ],
+    "example": "Suppose you argue that a study room should stay open later. One student’s experience illustrates the problem, but it does not establish how many people need the change. Propose collecting demand by hour and comparing it with staffing costs. Consider an alternative such as longer hours during exams only. Explain how evidence could support a narrower proposal than the one you originally preferred.",
+    "nuance": "Use this illustrative scenario to explain your reasoning. Distinguish your own interpretation from the background information, and acknowledge a reasonable alternative.",
+    "resources": []
+  },
+  {
+    "id": "cognitive-technology",
+    "category": "Cognitive technology",
+    "title": "Cognitive technology: tools for thinking",
+    "description": "Explore how interfaces can support remembering, reasoning, and deciding.",
+    "icon": "✳",
+    "points": [
+      [
+        "A broad design lens.",
+        "Here, cognitive technology means tools designed to support mental tasks. A checklist, concept map, and interactive dashboard can all serve this purpose; the term is not limited to AI."
+      ],
+      [
+        "Make information visible.",
+        "An interface can show available actions and prior choices so a user does not have to reconstruct them from memory. Recognition and recall place different demands on the user."
+      ],
+      [
+        "Evaluate the whole task.",
+        "A tool should help people interpret information and act appropriately. Finishing a task quickly does not by itself show that someone understands the result."
+      ]
+    ],
+    "terms": [
+      [
+        "Recognition",
+        "Identifying something with cues present."
+      ],
+      [
+        "Recall",
+        "Retrieving information without the answer being shown."
+      ]
+    ],
+    "example": "Imagine booking a complicated trip. One interface asks you to remember flight dates while moving between screens. Another keeps an itinerary summary visible. Explain how the summary changes the work you do. Then consider its limits: if the summary is outdated or hard to interpret, visibility alone will not solve the problem. Propose a task that would let you compare the two designs.",
+    "nuance": "An aid can support performance without teaching the underlying skill. Decide whether your goal is immediate task success, learning, or both.",
+    "prompt": "Explain cognitive technology to a beginner using one tool, one mental process it supports, and one limitation.",
+    "source": "Concept overview with an original illustrative scenario. The linked reading provides additional background.",
+    "resources": [
+      [
+        "NN/g — Recognition vs. recall in interface design",
+        "https://www.nngroup.com/articles/recognition-and-recall/"
+      ]
+    ]
+  },
+  {
+    "id": "cognitive-load",
+    "category": "Cognitive technology",
+    "title": "Cognitive load & interface design",
+    "description": "Why can a visually simple task still feel mentally demanding?",
+    "icon": "✳",
+    "points": [
+      [
+        "Mental effort depends on the task.",
+        "Holding several details in mind while interpreting a new screen can compete with the task itself. Cognitive load is a useful way to discuss these processing demands."
+      ],
+      [
+        "Remove avoidable work.",
+        "Unclear labels, repeated data entry, and hidden instructions can make the interface harder to use. Showing relevant information at the point of need can reduce unnecessary effort."
+      ],
+      [
+        "Simple is not empty.",
+        "Removing every label or option can force users to guess. Useful simplicity keeps the information needed to make a decision accessible."
+      ]
+    ],
+    "terms": [
+      [
+        "Cognitive load",
+        "The mental processing demands involved in a task."
+      ],
+      [
+        "Progressive disclosure",
+        "Showing supporting detail when it becomes relevant."
+      ]
+    ],
+    "example": "Imagine a course registration form with twenty unfamiliar fields. Group related fields, use meaningful labels, and put an example beside an ambiguous question. Compare that design with splitting every field into a separate screen. The second design looks sparse but may make comparisons harder. Explain what users need to keep in mind and which design best supports that particular decision.",
+    "nuance": "A novice and an expert may need different amounts of explanation. Evaluate with the intended audience rather than treating minimal appearance as evidence of low effort.",
+    "prompt": "Redesign one confusing interface and explain which mental demands your changes reduce.",
+    "source": "Concept overview with an original illustrative scenario. The linked reading provides additional background.",
+    "resources": [
+      [
+        "NN/g — Minimize cognitive load",
+        "https://www.nngroup.com/articles/minimize-cognitive-load/"
+      ]
+    ]
+  },
+  {
+    "id": "distributed-cognition",
+    "category": "Cognitive technology",
+    "title": "Distributed cognition",
+    "description": "Can thinking be understood as something happening across people and tools?",
+    "icon": "✳",
+    "points": [
+      [
+        "Widen the unit of analysis.",
+        "Distributed cognition examines how a task is carried out across people, representations, and the environment, rather than looking only inside one individual."
+      ],
+      [
+        "Follow the information.",
+        "A note, shared display, or spoken update can transform and pass information from one part of an activity to another. Ask what is represented and who can use it."
+      ],
+      [
+        "Inspect the handoffs.",
+        "A group may fail because important information is unavailable at the right moment, even when each person is capable of their individual task."
+      ]
+    ],
+    "terms": [
+      [
+        "External representation",
+        "Information expressed in a visible or otherwise accessible artifact."
+      ],
+      [
+        "Coordination",
+        "Organizing contributions so they support a joint task."
+      ]
+    ],
+    "example": "Consider a restaurant kitchen. Orders arrive on tickets, stations prepare different items, and a shared counter shows which meals are almost ready. Explain how the tickets and arrangement of dishes help staff coordinate. Then imagine that an order change reaches only one station. Trace where the information stopped moving and propose a visible update that would repair the handoff.",
+    "nuance": "This perspective does not imply that objects have human awareness. It describes how a larger arrangement supports cognitive activity.",
+    "prompt": "Explain distributed cognition through a team activity, tracing one piece of information across people and tools.",
+    "source": "Concept overview with an original illustrative scenario. The linked reading provides additional background.",
+    "resources": [
+      [
+        "NN/g — Distributed cognition in field studies",
+        "https://www.nngroup.com/articles/context-cues-framework-field-studies/"
+      ]
+    ]
+  },
+  {
+    "id": "human-loop",
+    "category": "Cognitive technology",
+    "title": "Human-in-the-loop systems",
+    "description": "What does meaningful human oversight actually require?",
+    "icon": "✳",
+    "points": [
+      [
+        "Specify the role.",
+        "A person may set goals, review a recommendation, approve an action, or intervene after a problem. These roles provide different kinds of control."
+      ],
+      [
+        "Make the system understandable.",
+        "Operators need useful information about what automation is doing and why an intervention may be needed. A confirmation button alone is a weak description of oversight."
+      ],
+      [
+        "Plan for recovery.",
+        "Consider how an operator can take over, what information is available, and whether there is enough time to respond when automation fails."
+      ]
+    ],
+    "terms": [
+      [
+        "Situation awareness",
+        "Understanding relevant conditions and how they are developing."
+      ],
+      [
+        "Function allocation",
+        "Deciding which parts of a task belong to a person or an automated system."
+      ]
+    ],
+    "example": "Imagine an automated scheduling tool proposing room assignments. A coordinator sees conflicts and can edit the proposal before publishing. Compare this with receiving an alert only after everyone has been notified. Describe what the coordinator needs to inspect and how a mistaken assignment can be reversed. This example makes the timing and scope of human control explicit.",
+    "nuance": "Adding a human reviewer does not automatically make a system reliable. The review must be feasible, informed, and connected to an effective action.",
+    "prompt": "Design a human review step for an automated service and explain its information needs and failure recovery.",
+    "source": "Concept overview with an original illustrative scenario. The linked reading provides additional background.",
+    "resources": [
+      [
+        "NASA — Crew interfaces and automation",
+        "https://www.nasa.gov/reference/10-0-crew-interfaces-vol-2/"
+      ]
+    ]
+  },
+  {
+    "id": "neurons",
+    "category": "Neuroscience",
+    "title": "Neuroscience: how neurons communicate",
+    "description": "Connect the structure of a nerve cell with the flow of a signal.",
+    "icon": "◎",
+    "points": [
+      [
+        "Cells are specialized.",
+        "Neurons receive and transmit signals. Dendrites commonly receive inputs, while an axon carries signals toward other cells; actual circuits vary in structure."
+      ],
+      [
+        "Signals change form.",
+        "An action potential is an electrical event traveling along an axon. At a chemical synapse, released neurotransmitters affect receptors on another cell."
+      ],
+      [
+        "Networks matter.",
+        "Behavior depends on interactions among many cells and circuits. Describing a single neuron is a starting point, not a complete explanation of a thought."
+      ]
+    ],
+    "terms": [
+      [
+        "Synapse",
+        "A specialized junction through which a cell communicates with another."
+      ],
+      [
+        "Neurotransmitter",
+        "A chemical messenger released at a chemical synapse."
+      ]
+    ],
+    "example": "Use a relay as an analogy: a signal travels along one path and is passed to another participant. Then identify where the analogy breaks down. A receiving neuron combines many influences, and chemical messages do not all have the same effect. Build your explanation from cell structure to communication before trying to connect the process to a complex behavior.",
+    "nuance": "Avoid the idea that one brain region or chemical explains an entire personality or emotion. The overview simplifies a much more complex system.",
+    "prompt": "Explain a neuron-to-neuron signal using dendrite, axon, synapse, and neurotransmitter, then state one limit of your analogy.",
+    "source": "Concept overview with an original illustrative scenario. The linked reading provides additional background.",
+    "resources": [
+      [
+        "NINDS — Know Your Brain (PDF)",
+        "https://www.ninds.nih.gov/sites/default/files/2025-05/know-your-brain-brian-basics.pdf"
+      ]
+    ]
+  },
+  {
+    "id": "plasticity",
+    "category": "Neuroscience",
+    "title": "Neuroplasticity & learning",
+    "description": "How can experience change a nervous system?",
+    "icon": "◎",
+    "points": [
+      [
+        "Plasticity means change.",
+        "Neuroplasticity refers broadly to changes in nervous-system structure or function. Learning can involve changes in how neural circuits respond."
+      ],
+      [
+        "Connections can change strength.",
+        "Synaptic plasticity includes activity-dependent changes in the effectiveness of connections. Strengthening and weakening are both relevant; more activity is not always better."
+      ],
+      [
+        "Keep levels of evidence separate.",
+        "Improved behavior and a measured change at a synapse are different observations. A claim linking them needs more than a before-and-after performance score."
+      ]
+    ],
+    "terms": [
+      [
+        "Synaptic plasticity",
+        "A change in the effectiveness of communication at a synapse."
+      ],
+      [
+        "Neural circuit",
+        "Interconnected neurons that participate in processing information."
+      ]
+    ],
+    "example": "Imagine learning a new sequence on a keyboard. You become faster with practice, but speed alone cannot tell you exactly which neural connections changed. Explain the observable improvement first. Then discuss the kinds of neural measurements a researcher would need to connect that improvement to a proposed mechanism. This keeps an everyday learning example distinct from direct evidence about the brain.",
+    "nuance": "Plasticity does not mean unlimited change or instant mastery. A general principle about learning is not a guarantee that a particular training product works.",
+    "prompt": "Explain neuroplasticity without using “rewiring” as the whole explanation. Distinguish behavioral evidence from a proposed neural mechanism.",
+    "source": "Concept overview with an original illustrative scenario. The linked reading provides additional background.",
+    "resources": [
+      [
+        "NIH curriculum — Information about the brain",
+        "https://www.ncbi.nlm.nih.gov/books/NBK20367/"
+      ]
+    ]
+  },
+  {
+    "id": "working-memory",
+    "category": "Neuroscience",
+    "title": "Working memory: holding and using information",
+    "description": "Why is keeping an idea in mind different from knowing it long term?",
+    "icon": "◎",
+    "points": [
+      [
+        "Memory has different functions.",
+        "Encoding brings information into memory, storage retains it, and retrieval makes it available again. These are useful distinctions, not a claim that memory is a literal filing cabinet."
+      ],
+      [
+        "Working memory is active.",
+        "It temporarily supports holding and manipulating information, such as keeping intermediate steps in mind while solving a problem."
+      ],
+      [
+        "Knowledge can provide structure.",
+        "Meaningful grouping can help organize information. A familiar abbreviation may be one useful unit to an expert and several unfamiliar letters to a beginner."
+      ]
+    ],
+    "terms": [
+      [
+        "Encoding",
+        "Processing information so it can enter memory."
+      ],
+      [
+        "Chunking",
+        "Organizing separate items into meaningful units."
+      ]
+    ],
+    "example": "Compare repeating a short number with calculating a price after a discount while remembering that number. The second task requires both retention and manipulation. Explain how writing down an intermediate result changes the task. Then distinguish remembering the answer tomorrow from holding it in mind right now. This illustrates why everyday uses of the word “memory” can refer to different processes.",
+    "nuance": "A single fixed number is not a universal measure of everyone’s working-memory capacity; the task, material, and prior knowledge matter.",
+    "prompt": "Teach working memory using a two-step mental calculation and show how an external aid changes the demands.",
+    "source": "Concept overview with an original illustrative scenario. The linked reading provides additional background.",
+    "resources": [
+      [
+        "OpenStax Psychology 2e — How memory functions",
+        "https://openstax.org/books/psychology-2e/pages/8-1-how-memory-functions"
+      ]
+    ]
+  },
+  {
+    "id": "sleep-memory",
+    "category": "Neuroscience",
+    "title": "Sleep, rhythms & memory",
+    "description": "Explore sleep as an active biological process rather than an empty pause.",
+    "icon": "◎",
+    "points": [
+      [
+        "Sleep has stages.",
+        "Non-REM and REM sleep have different characteristics and recur through the night. Brain activity changes across these stages."
+      ],
+      [
+        "Timing has multiple influences.",
+        "Circadian rhythms help coordinate daily timing, while sleep pressure builds with time awake. They are related but distinct processes."
+      ],
+      [
+        "Learning continues beyond practice.",
+        "Sleep is involved in processes important for learning and memory. This does not mean a sleeping person can replace studying with passive exposure."
+      ]
+    ],
+    "terms": [
+      [
+        "Circadian rhythm",
+        "A roughly daily pattern in biological processes."
+      ],
+      [
+        "Consolidation",
+        "Processes through which a memory becomes more stable over time."
+      ]
+    ],
+    "example": "Imagine comparing two study routines: both include the same practice, but one pushes the work far into the night. Before drawing conclusions, consider how you would separate the effects of practice duration, fatigue, and time of testing. Explain why a personal anecdote is not enough to establish the mechanism. Use the example to distinguish a plausible explanation from a controlled comparison.",
+    "nuance": "This is a science discussion, not a personalized sleep prescription. Memory involves multiple processes and cannot be reduced to one sleep stage.",
+    "prompt": "Explain the difference between circadian timing and sleep pressure, then connect sleep with learning without promising a shortcut.",
+    "source": "Concept overview with an original illustrative scenario. The linked reading provides additional background.",
+    "resources": [
+      [
+        "NINDS — Understanding Sleep (PDF)",
+        "https://www.ninds.nih.gov/sites/default/files/2025-05/understanding-sleep.pdf"
+      ]
+    ]
+  },
+  {
+    "id": "ecosystem-energy",
+    "category": "Ecosystems",
+    "title": "Ecosystems & energy flow",
+    "description": "Follow energy through producers, consumers, and decomposers.",
+    "icon": "❋",
+    "points": [
+      [
+        "An ecosystem includes context.",
+        "Living organisms interact with each other and with nonliving conditions such as water, temperature, and nutrients. A food web describes feeding relationships within that system."
+      ],
+      [
+        "Energy enters and transfers.",
+        "In many ecosystems, producers capture sunlight. Consumers obtain chemical energy by eating other organisms, while decomposers process organic material."
+      ],
+      [
+        "Energy does not cycle like matter.",
+        "Energy is transformed and dissipated as heat through these processes. Matter can be recycled through living organisms and the physical environment."
+      ]
+    ],
+    "terms": [
+      [
+        "Trophic level",
+        "A feeding position in a food chain or web."
+      ],
+      [
+        "Primary production",
+        "The formation of organic material by producers."
+      ]
+    ],
+    "example": "Draw a pond with algae, small grazers, fish, and decomposers. Trace an energy pathway from sunlight through feeding relationships, then separately trace a nutrient returning from decaying material. Explain why those two arrows represent different processes. Finally, add a nonliving factor such as water temperature and discuss why a feeding diagram alone is not a full model of the pond.",
+    "nuance": "Energy-transfer efficiency varies; a simple classroom percentage is an approximation, not a fixed law for every organism and ecosystem.",
+    "prompt": "Explain why energy flows while matter cycles, using a pond and at least three trophic roles.",
+    "source": "Concept overview with an original illustrative scenario. The linked reading provides additional background.",
+    "resources": [
+      [
+        "OpenStax Biology 2e — Energy flow through ecosystems",
+        "https://openstax.org/books/biology-2e/pages/46-2-energy-flow-through-ecosystems"
+      ]
+    ]
+  },
+  {
+    "id": "nutrient-cycles",
+    "category": "Ecosystems",
+    "title": "Nutrient cycles & eutrophication",
+    "description": "A useful nutrient can become a problem when too much arrives at once.",
+    "icon": "❋",
+    "points": [
+      [
+        "Elements move among reservoirs.",
+        "Biogeochemical cycles connect organisms with air, water, soil, and rock. A reservoir stores material; a flux is movement between reservoirs."
+      ],
+      [
+        "Microorganisms matter.",
+        "Microbial processes help transform nutrients into different chemical forms. Describing a nutrient cycle requires transformations as well as locations."
+      ],
+      [
+        "Extra nutrients can change a water body.",
+        "Nitrogen and phosphorus inputs can promote excessive growth. Decomposition of organic material can consume dissolved oxygen, affecting aquatic organisms."
+      ]
+    ],
+    "terms": [
+      [
+        "Biogeochemical cycle",
+        "Movement and transformation of elements through living and nonliving systems."
+      ],
+      [
+        "Eutrophication",
+        "Nutrient enrichment of a water body and its associated ecological effects."
+      ]
+    ],
+    "example": "Imagine a lake receiving runoff from nearby fields. Map the sequence from nutrient input to increased growth, accumulated organic material, and oxygen consumption during decomposition. Do not skip straight from fertilizer to fish deaths. Ask what observations would support each step, such as nutrient measurements and oxygen levels over time. The exercise turns a broad environmental claim into a chain of testable relationships.",
+    "nuance": "Lake conditions vary. Nutrient supply, water movement, temperature, and existing communities influence what happens; one sequence is not a prediction for every lake.",
+    "prompt": "Explain eutrophication as a causal sequence and identify two measurements that could test your explanation.",
+    "source": "Concept overview with an original illustrative scenario. The linked reading provides additional background.",
+    "resources": [
+      [
+        "OpenStax Biology 2e — Biogeochemical cycles",
+        "https://openstax.org/books/biology-2e/pages/46-3-biogeochemical-cycles"
+      ]
+    ]
+  },
+  {
+    "id": "biodiversity",
+    "category": "Ecosystems",
+    "title": "Biodiversity beyond species counts",
+    "description": "What are we measuring when we say a place is diverse?",
+    "icon": "❋",
+    "points": [
+      [
+        "Diversity exists at several levels.",
+        "Genetic diversity concerns variation within populations or species. Species diversity concerns different species, while ecosystem diversity concerns different ecological systems."
+      ],
+      [
+        "Choose the measure carefully.",
+        "Species richness counts the species present. That count alone does not show how evenly individuals are distributed among them."
+      ],
+      [
+        "Conservation needs specificity.",
+        "Habitat loss and other pressures can affect different components of biodiversity. State what is changing rather than treating biodiversity as a single interchangeable quantity."
+      ]
+    ],
+    "terms": [
+      [
+        "Species richness",
+        "The number of species in a defined area or sample."
+      ],
+      [
+        "Genetic diversity",
+        "Variation in genetic characteristics within a group."
+      ]
+    ],
+    "example": "Compare two hypothetical gardens with the same number of plant species. In one, almost every plant belongs to a single species; in the other, their abundances are more balanced. Explain why richness alone does not describe the whole difference. Then consider whether a plant-only survey would tell you enough about insects, soil organisms, or seasonal changes in either garden.",
+    "nuance": "Diversity measures depend on the area, timing, and sampling method. A larger species count alone does not answer every conservation question.",
+    "prompt": "Explain three levels of biodiversity and use an example to show a limitation of species counts.",
+    "source": "Concept overview with an original illustrative scenario. The linked reading provides additional background.",
+    "resources": [
+      [
+        "OpenStax Biology 2e — The biodiversity crisis",
+        "https://openstax.org/books/biology-2e/pages/47-1-the-biodiversity-crisis"
+      ]
+    ]
+  },
+  {
+    "id": "food-webs",
+    "category": "Ecosystems",
+    "title": "Food webs & keystone species",
+    "description": "How can a change in one population influence the wider community?",
+    "icon": "❋",
+    "points": [
+      [
+        "Interactions form networks.",
+        "Predation, competition, and mutualism connect species in different ways. A community is more than a list of organisms living in the same place."
+      ],
+      [
+        "Effects can be indirect.",
+        "Changing one population may alter another population through an intermediate species. Follow the links rather than assuming only direct neighbors are affected."
+      ],
+      [
+        "Influence is not the same as abundance.",
+        "A keystone species has a disproportionately large effect relative to its abundance. Being common or charismatic does not by itself establish that role."
+      ]
+    ],
+    "terms": [
+      [
+        "Trophic cascade",
+        "Indirect effects that propagate across feeding levels."
+      ],
+      [
+        "Mutualism",
+        "An interaction in which both participating species benefit."
+      ]
+    ],
+    "example": "Use a hypothetical chain of predators, herbivores, and plants. Predict what could happen to plants if predators decline and herbivores increase. Then add an alternative food source and a drought. Explain how these additions make the original prediction less certain. This shows why a simple chain is a useful starting model but a food web can behave differently in a changing environment.",
+    "nuance": "Do not label a species “keystone” from a diagram alone. Its influence requires evidence in the community being studied.",
+    "prompt": "Explain a possible trophic cascade, then add one ecological interaction that could change your prediction.",
+    "source": "Concept overview with an original illustrative scenario. The linked reading provides additional background.",
+    "resources": [
+      [
+        "OpenStax Biology 2e — Community ecology",
+        "https://openstax.org/books/biology-2e/pages/45-6-community-ecology"
+      ]
+    ]
+  }
+];
+let selected=topics[0],filter='All topics',recorder,stream,chunks=[],timer,started,objectUrl,recordedTopic,requesting=false;
+const $=s=>document.querySelector(s);
+function renderFilters(){ $('.filters').replaceChildren(...['All topics',...new Set(topics.map(t=>t.category))].map(c=>{const b=document.createElement('button');b.className='filter'+(c===filter?' active':'');b.textContent=c;b.setAttribute('aria-pressed',c===filter);b.onclick=()=>{filter=c;resetTopicDeck();renderFilters();renderTopics()};return b}));}
+let topicDeck=[],topicOffset=0;
+function resetTopicDeck(){
+ topicDeck=topics.filter(t=>filter==='All topics'||t.category===filter);
+ for(let i=topicDeck.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[topicDeck[i],topicDeck[j]]=[topicDeck[j],topicDeck[i]];}
+ topicOffset=0;
+}
+function renderTopics(){
+ const batchSize=filter==='All topics'?6:3;
+ const visibleTopics=topicDeck.slice(topicOffset,topicOffset+batchSize);
+ $('#topic-count').textContent=`${topicOffset+1}–${topicOffset+visibleTopics.length} of ${topicDeck.length} topics`;
+ $('.topics').replaceChildren(...visibleTopics.map(t=>{const b=document.createElement('button');b.className='topic'+(t===selected?' selected':'');b.setAttribute('aria-pressed',t===selected);b.innerHTML=`<span class="topic-icon" aria-hidden="true">${t.icon}</span><span><strong>${t.title}</strong><small>${t.category} &nbsp; · &nbsp; ${['Cognitive technology','Neuroscience','Ecosystems'].includes(t.category)?'Concept deep dive':'Explore a perspective'}</small></span><span class="arrow" aria-hidden="true">↗</span>`;b.onclick=()=>{selected=t;renderTopics();renderBrief()};return b}));}
+function renderBrief(){
+ $('#category').textContent=selected.category+' / Topic brief';
+ $('#topic-title').textContent=selected.title;
+ $('#description').textContent=selected.description;
+ $('.points').innerHTML=selected.points.map((p,i)=>`<div class="point"><b>${String(i+1).padStart(2,'0')}</b><div><strong>${p[0]}</strong> ${p[1]}</div></div>`).join('');
+ $('#terms').innerHTML=selected.terms.map(([term,definition])=>`<div class="term-card"><dt>${term}</dt><dd>${definition}</dd></div>`).join('');
+ $('#example').textContent=selected.example;
+ $('#nuance').textContent=selected.nuance;
+ $('#sources').textContent=selected.source+' All practice notes are available offline. Optional reading links open an external website.';
+ $('#resource-links').replaceChildren(...selected.resources.map(([label,url])=>{const a=document.createElement('a');a.textContent=label+' ↗';a.href=url;a.target='_blank';a.rel='noopener noreferrer';return a}));
+ $('#prompt').textContent=selected.prompt;
+}
+let recordingState='idle';
+function stopTracks(){
+ clearInterval(timer);
+ if(stream){stream.getTracks().forEach(t=>{t.onended=null;t.stop()});stream=null;}
+ $('#live-preview').srcObject=null;
+ $('#live-preview').hidden=true;
+ $('#camera-placeholder').hidden=false;
+ $('#camera-badge').hidden=true;
+}
+function resetControls(){
+ recordingState='idle';requesting=false;
+ $('#record').classList.remove('recording');
+ $('#record-label').textContent=objectUrl?'Record another video':'Start video recording';
+ $('#record-title').textContent=objectUrl?'Ready for another take':'Ready when you are';
+ $('#record-help').textContent='Aim for 2–3 minutes. Clarity comes with practice.';
+ $('#record').disabled=false;
+ $('#delete-video').disabled=false;
+}
+function finishRecording(){
+ if(recordingState!=='recording')return;
+ recordingState='stopping';
+ $('#record').disabled=true;
+ $('#record-label').textContent='Preparing video…';
+ clearInterval(timer);
+ if(recorder&&recorder.state!=='inactive')recorder.stop();
+ stopTracks();
+}
+$('#record').onclick=async()=>{
+ if(recordingState==='recording'){finishRecording();return;}
+ if(recordingState!=='idle')return;
+ if(!navigator.mediaDevices?.getUserMedia||!window.MediaRecorder){
+  $('#status').textContent='Video recording is unavailable here. Open this localhost page in a browser with camera and MediaRecorder support.';return;
+ }
+ recordingState='requesting';requesting=true;$('#record').disabled=true;$('#delete-video').disabled=true;
+ $('#record-label').textContent='Requesting camera…';
+ $('#status').textContent='Allow camera and microphone access to record your presentation.';
+ const takeTopic=selected.title;
+ let recordingFailed=false;
+ try{
+  stream=await navigator.mediaDevices.getUserMedia({video:{width:{ideal:1280},height:{ideal:720},facingMode:'user'},audio:{echoCancellation:true}});
+  const types=['video/webm;codecs=vp9,opus','video/webm;codecs=vp8,opus','video/webm','video/mp4'];
+  const mimeType=types.find(type=>MediaRecorder.isTypeSupported(type));
+  recorder=new MediaRecorder(stream,mimeType?{mimeType}:undefined);
+  const takeRecorder=recorder;
+  const takeChunks=[];
+  recorder.ondataavailable=e=>{if(e.data.size)takeChunks.push(e.data)};
+  recorder.onstop=()=>{
+   stopTracks();
+   if(recordingFailed||!takeChunks.length){resetControls();$('#status').textContent='The video could not be completed. Please try again. Any previous take is still available.';return;}
+   const blob=new Blob(takeChunks,{type:takeRecorder.mimeType||takeChunks[0].type});
+   const nextUrl=URL.createObjectURL(blob);
+   const player=$('#recorded-video');
+   player.pause();player.src=nextUrl;player.load();
+   if(objectUrl)URL.revokeObjectURL(objectUrl);
+   objectUrl=nextUrl;
+   $('#download').href=objectUrl;
+   $('#download').download='sayso-presentation-'+Date.now()+(blob.type.includes('mp4')?'.mp4':'.webm');
+   $('#take-title').textContent=takeTopic;
+   $('.playback').hidden=false;
+   resetControls();
+   $('#status').textContent='Your video is ready below. Press play to watch it, or download it before closing this tab or completing another take.';
+  };
+  recorder.onerror=()=>{
+   recordingFailed=true;
+   if(takeRecorder.state!=='inactive')takeRecorder.stop();
+   stopTracks();resetControls();
+   $('#status').textContent='Video recording was interrupted. Check your camera and microphone, then try again.';
+  };
+  $('#recorded-video').pause();
+  $('#live-preview').srcObject=stream;
+  $('#live-preview').hidden=false;$('#camera-placeholder').hidden=true;$('#camera-badge').hidden=false;
+  $('#live-preview').play().catch(()=>{});
+  recorder.start(1000);started=Date.now();recordingState='recording';
+  stream.getTracks().forEach(track=>{track.onended=()=>{if(recordingState==='recording')finishRecording()}});
+  $('#record').disabled=false;$('#record').classList.add('recording');
+  $('#record-label').textContent='Stop recording';$('#record-title').textContent='Recording · 00:00';
+  $('#record-help').textContent=takeTopic;
+  $('#status').textContent='Recording video and audio. Your live preview is mirrored and muted; the saved video includes sound.';
+  timer=setInterval(()=>{const n=Math.floor((Date.now()-started)/1000);$('#record-title').textContent='Recording · '+String(Math.floor(n/60)).padStart(2,'0')+':'+String(n%60).padStart(2,'0')},250);
+ }catch(e){
+  stopTracks();resetControls();
+  const messages={NotAllowedError:'Camera or microphone access was not granted. Allow both in your browser settings, then try again.',NotFoundError:'A camera and microphone are required. Connect both devices and try again.',NotReadableError:'Your camera or microphone is unavailable. Close other apps using it, then try again.',OverconstrainedError:'Your camera could not use the requested settings. Try another camera or browser.'};
+  $('#status').textContent=messages[e.name]||'Could not start video recording. Check your camera, microphone, and browser support, then try again.';
+ }finally{requesting=false;}
+};
+$('#delete-video').onclick=()=>{
+ if(recordingState!=='idle'||!objectUrl)return;
+ const player=$('#recorded-video');
+ player.pause();
+ player.removeAttribute('src');
+ player.load();
+ URL.revokeObjectURL(objectUrl);
+ objectUrl=null;
+ recorder=null;
+ $('#download').removeAttribute('href');
+ $('#download').removeAttribute('download');
+ $('#take-title').textContent='';
+ $('.playback').hidden=true;
+ resetControls();
+ $('#status').textContent='Video deleted from this tab. You can record a new take. Downloaded copies are unchanged.';
+ $('#record').focus();
+};
+$('#refresh-topics').onclick=()=>{const batchSize=filter==='All topics'?6:3;topicOffset=topicOffset+batchSize>=topicDeck.length?0:topicOffset+batchSize;renderTopics()};
+window.addEventListener('beforeunload',()=>{stopTracks();if(objectUrl)URL.revokeObjectURL(objectUrl)});resetTopicDeck();selected=topics.find(t=>t.id==='cognitive-technology');topicDeck=[selected,...topicDeck.filter(t=>t!==selected)];renderFilters();renderTopics();renderBrief();
+</script></body></html>
