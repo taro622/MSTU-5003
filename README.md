@@ -26,7 +26,7 @@ speech length.
 
 I used Codex to help build this project. I provided the initial idea, described the features I wanted, 
 and reviewed the results. Codex generated and revised the HTML, CSS, and JavaScript based on my instructions. 
-I also used Codex to help organize and my own project explanation and reflections for this README.
+I also used Codex to help organize my own project explanation and reflections for this README.
 
 The following key prompts are condensed summaries of my requests:
 
